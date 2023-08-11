@@ -29,10 +29,10 @@ export default function RootLayout({
 
           <div className = "FLEX-WRAPPER flex w-full md:w-[90%] md:h-[80%] h-full">
             <LeftSideBar/>
-            <main className = "flex justify-between w-full ">
+            <main className = "flex justify-between w-full">
 
               <section className = "w-full mx-5">
-                <div className = "max-w-4xl">
+                <div className = "w-full">
                   {children}
                 </div>
               </section>

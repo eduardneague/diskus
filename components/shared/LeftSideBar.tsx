@@ -11,7 +11,7 @@ function LeftSideBar() {
     const pathname = usePathname()
 
     return (
-        <section className = "custom-scrollbar leftsidebar w-auto lg:w-[30%] xl:w-[35%] 2xl:w-[25%]">
+        <section className = "custom-scrollbar leftsidebar w-[8rem] lg:w-[30%] xl:w-[35%] 2xl:w-[25%]">
             <div className = "flex w-full flex-1 flex-col justify-between px-6">
                 <div className = "flex flex-col flex-1 gap-4">
                 {
@@ -22,13 +22,13 @@ function LeftSideBar() {
                             <Link 
                                 href = {link.route} 
                                 key = {link.label}
-                                className = {`leftsidebar_link ${isActive && 'bg-diskus-pink'} `}
+                                className = {`relative flex items-center justify-center lg:justify-start lg:gap-4 gap-0 p-4 rounded-lg  ${isActive && 'bg-diskus-pink'} `}
                             >
                                 <Image
                                     src = {link.imgURL}
                                     alt = {link.label}
-                                    width = {38}
-                                    height = {38}
+                                    width = {24}
+                                    height = {24}
                                     draggable = {false}
                                     className = "select-none"
                                 />

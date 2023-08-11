@@ -83,7 +83,7 @@ textarea {
     }
   
     .leftsidebar_link {
-      @apply relative flex justify-start gap-4 rounded-lg p-4;
+      @apply relative flex md:justify-start justify-center items-center md:gap-4 gap-0 rounded-lg p-4;
     }
   
     .pagination {
