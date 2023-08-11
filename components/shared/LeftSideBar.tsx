@@ -11,7 +11,7 @@ function LeftSideBar() {
     const pathname = usePathname()
 
     return (
-        <section className = "custom-scrollbar leftsidebar">
+        <section className = "custom-scrollbar leftsidebar w-auto lg:w-[30%] xl:w-[35%] 2xl:w-[25%]">
             <div className = "flex w-full flex-1 flex-col justify-between px-6">
                 <div className = "flex flex-col flex-1 gap-4">
                 {
@@ -27,8 +27,8 @@ function LeftSideBar() {
                                 <Image
                                     src = {link.imgURL}
                                     alt = {link.label}
-                                    width = {24}
-                                    height = {24}
+                                    width = {38}
+                                    height = {38}
                                     draggable = {false}
                                     className = "select-none"
                                 />

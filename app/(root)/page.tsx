@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
     <section>
-        <h1>Home</h1>
+        <h1 className = "head-text text-black">Home</h1>
     </section>
     </>
   )

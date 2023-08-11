@@ -20,6 +20,8 @@ import Image from 'next/image';
 import { Textarea } from '../ui/textarea';
 import { isBase64Image } from '@/lib/utils';
 import { useUploadThing } from '@/lib/uploadthing'
+import { updateUser } from '@/lib/actions/user.actions';
+import { usePathname, useRouter } from 'next/navigation';
 
 interface Props {
     user: {
@@ -37,6 +39,8 @@ const AccountProfile = ({user, btnTitle}: Props) => {
 
     const [files, setFiles] = useState<any>([])
     const { startUpload } = useUploadThing("media")
+    const router = useRouter()
+    const pathname = usePathname()
 
     const form = useForm({
         resolver: zodResolver(UserValidation),
@@ -66,20 +70,33 @@ const AccountProfile = ({user, btnTitle}: Props) => {
         }
     }
 
-    const onSubmit = async (values: z.infer<typeof UserValidation>) =>  {
-        const blob = values.profile_photo
-        const hasImageChanged = isBase64Image(blob)
-
-        if(hasImageChanged) {
-            const imgRes = await startUpload(files[0])
-
-            if(imgRes && imgRes[0].fileUrl) {
-                values.profile_photo = imgRes[0].fileUrl
-            }
+    const onSubmit = async (values: z.infer<typeof UserValidation>) => {
+        const blob = values.profile_photo;
+    
+        const hasImageChanged = isBase64Image(blob);
+        if (hasImageChanged) {
+          const imgRes = await startUpload(files);
+    
+          if (imgRes && imgRes[0].fileUrl) {
+            values.profile_photo = imgRes[0].fileUrl;
+          }
         }
-
-        // todo: update user profile
-    }
+    
+        await updateUser({
+          name: values.name,
+          path: pathname,
+          username: values.username,
+          userId: user.id,
+          bio: values.bio,
+          image: values.profile_photo,
+        });
+    
+        if (pathname === "/profile/edit") {
+          router.back();
+        } else {
+          router.push("/");
+        }
+      };
 
     return (
         <>
@@ -98,7 +115,7 @@ const AccountProfile = ({user, btnTitle}: Props) => {
                         <FormLabel className = "account-form_image-label overflow-hidden">
                             {field.value ? (
                                 <Image
-                                    src=  {field.value}
+                                    src = {field.value}
                                     alt = "Diskus Profile Photo"
                                     width = {96}
                                     height = {96}
@@ -147,6 +164,7 @@ const AccountProfile = ({user, btnTitle}: Props) => {
                                 {...field}
                             />
                         </FormControl>
+                        <FormMessage/>
                     </FormItem>
                 )}
                 />
@@ -168,6 +186,7 @@ const AccountProfile = ({user, btnTitle}: Props) => {
                                 {...field}
                             />
                         </FormControl>
+                        <FormMessage/>
                     </FormItem>
                 )}
                 />
@@ -189,6 +208,7 @@ const AccountProfile = ({user, btnTitle}: Props) => {
                                 {...field}
                             />
                         </FormControl>
+                        <FormMessage/>
                     </FormItem>
                 )}
                 />
@@ -197,7 +217,7 @@ const AccountProfile = ({user, btnTitle}: Props) => {
 
                 <Button 
                     type="submit" 
-                    className="bg-diskus-pink text-black"
+                    className="bg-diskus-pink text-black hover:text-white"
                 >
                     Submit
                 </Button>

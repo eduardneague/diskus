@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+textarea {
+  resize: none;
+}
+
 @layer components {
     /* main */
     .main-container {
@@ -87,7 +91,7 @@
     }
   
     .rightsidebar {
-      @apply sticky ml-auto right-0 top-0 z-20 flex w-fit flex-col justify-between gap-12 overflow-auto border-l bg-white rounded-xl shadow px-10 pb-6 pt-5 max-xl:hidden;
+      @apply sticky right-0 top-0 z-20 flex w-fit flex-col justify-between gap-12 overflow-auto border-l bg-white rounded-xl shadow px-10 pb-6 pt-5 max-xl:hidden;
     }
   }
   
