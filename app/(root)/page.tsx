@@ -1,7 +1,7 @@
 //app/page.tsx
 import { UserButton } from "@clerk/nextjs";
 
-  // Left here, fetch Threads.
+  // Left here, fetch Threads. d
 
 export default function Home() {
   return (
