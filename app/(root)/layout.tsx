@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${poppins.className} flex flex-col justify-center items-center w-full h-screen bg-light-body-background`}>
+        <body className={`${poppins.className} flex flex-col justify-center items-center w-full md:h-screen bg-light-body-background`}>
 
           <Topbar/>
 
@@ -31,7 +31,7 @@ export default function RootLayout({
             <LeftSideBar/>
             <main className = "flex justify-between w-full">
 
-              <section className = "w-full mx-5">
+              <section className = "w-full mx-5 md:overflow-y-scroll custom-scrollbar md:pr-5">
                 <div className = "w-full">
                   {children}
                 </div>

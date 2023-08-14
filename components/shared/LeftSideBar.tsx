@@ -53,7 +53,7 @@ function LeftSideBar() {
                                     draggable = {false}
                                     className = "select-none"
                                 />
-                                <p className = "text-black max-lg:hidden leftsidebar_link">
+                                <p className = "text-black max-lg:hidden pl-4">
                                     Log out
                                 </p>
                             </div>

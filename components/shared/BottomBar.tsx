@@ -11,7 +11,7 @@ function BottomBar() {
 
     return (
         <>
-            <section className = "bottombar">
+            <section className = "bottombar shadow-2xl shadow-black">
                 <div className = "bottombar_container">
                 {
                     sidebarLinks.map((link) => {
