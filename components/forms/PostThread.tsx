@@ -70,7 +70,7 @@ function PostThread({userId}: {userId: string}) {
                     />
                     <Button 
                         type = "submit"
-                        className = "bg-diskus-pink text-black"
+                        className = "bg-diskus-pink text-black hover:text-white"
                     >
                         Post
                     </Button>

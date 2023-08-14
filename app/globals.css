@@ -38,7 +38,7 @@ textarea {
   
     /* thread card  */
     .thread-card_bar {
-      @apply relative mt-2 w-0.5 grow rounded-full;
+      @apply relative mt-2 w-[1.5px] grow rounded-full bg-gray-300;
     }
   
     /* User card */
@@ -81,11 +81,7 @@ textarea {
     .leftsidebar {
       @apply sticky left-0 top-0 z-20 flex w-fit flex-col justify-between overflow-auto bg-white rounded-xl shadow pb-5 pt-5 max-md:hidden;
     }
-  
-    .leftsidebar_link {
-      @apply relative flex md:justify-start justify-center items-center md:gap-4 gap-0 rounded-lg p-4;
-    }
-  
+    
     .pagination {
       @apply mt-10 flex w-full items-center justify-center gap-5;
     }
