@@ -138,7 +138,7 @@ textarea {
   
   /* Tab */
   .tab {
-    @apply flex min-h-[50px] flex-1 items-center gap-3 bg-dark-2 text-light-2 data-[state=active]:bg-[#0e0e12] data-[state=active]:text-light-2 !important;
+    @apply flex min-h-[50px] flex-1 items-center gap-3 shadow bg-white text-black data-[state=active]:bg-diskus-pink data-[state=active]:text-black !important;
   }
   
   .no-focus {
