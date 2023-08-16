@@ -27,7 +27,7 @@ const page = async ({params} : {params: {id: string}}) => {
             />
             <div className = "mt-9">
                 <Tabs defaultValue = "threads" className = "w-full">
-                    <TabsList className = "w-full flex gap-3 bg-light-body-background">
+                    <TabsList className = "w-full flex gap-0 bg-light-body-background">
                         {profileTabs.map((tab) => {
                             return (
                                 <TabsTrigger key = {tab.label} value = {tab.value} className = "tab" >
