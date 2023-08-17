@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  tpyescript: {
+  typescript: {
     ignoreBuildErrors: true,
   },
     experimental: {
