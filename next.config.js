@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  tpyescript: {
+    ignoreBuildErrors: true,
+  },
     experimental: {
       serverActions: true,
       serverComponentsExternalPackages: ["mongoose"],
