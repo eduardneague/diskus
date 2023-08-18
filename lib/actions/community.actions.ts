@@ -32,7 +32,7 @@ export async function createCommunity(
       username,
       image,
       bio,
-      createdBy: user._id, // Use the mongoose ID of the user
+      createdBy: user._id, // Use the mongoose ID of the user ddd
     });
 
     const createdCommunity = await newCommunity.save();
@@ -43,7 +43,8 @@ export async function createCommunity(
 
     return createdCommunity;
   } catch (error) {
-    // Handle any errors
+    // Handle any errors  +
+    
     console.error("Error creating community:", error);
     throw error;
   }
