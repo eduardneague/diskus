@@ -23,7 +23,7 @@ export async function createCommunity(
     const user = await User.findOne({ id: createdById });
 
     if (!user) {
-      throw new Error("User not found"); // Handle the case if the user with the id is not found
+      throw new Error("User not found"); // dHandle the case if the user with the id is not found
     }
 
     const newCommunity = new Community({
