@@ -38,7 +38,7 @@ const ThreadCard = ({
     isComment
 }: Props) => {
     return (
-        <article className = {` ${isComment ? 'px-0 xs:px-7' : 'bg-white p-7 shadow'}  flex w-full flex-col rounded-xl`}>
+        <article className = {` ${isComment ? 'px-0 xs:px-7' : 'bg-[#272727] p-7 shadow'} text-white  flex w-full flex-col rounded-xl`}>
             <div className = "flex items-start justify-between">
                 <div className = "flex w-full flex-1 flex-row gap-4">
                     <div className = "flex flex-col items-center">
@@ -53,54 +53,32 @@ const ThreadCard = ({
                                 unoptimized = {true}
                             />
                         </Link>
-                        <div className = "thread-card_bar"/>
+                        <div className = "thread-card_bar bg-gray-600"/>
                     </div>
                     <div className = "flex w-full flex-col">
                         <Link href= {`/profile/${author.id}`} className = "w-fit">
                             <h4 className = "cursor-pointer text-base-semibold">{author.name}</h4>
                         </Link>
-                        <p className = "mt-2 text-small-regular text-black">{content}</p>
+                        <p className = "mt-2 text-small-regular text-white">{content}</p>
                         <div className = "flex flex-col gap-3">
                             <div className = "mt-3 flex gap-3.5">
-                                <Image
-                                    src = "/heart-gray.svg"
-                                    alt = "heart"
-                                    width = {24}
-                                    height = {24}
-                                    className = "cursor-pointer object-contain select-none"
-                                    draggable = {false}
-                                />
                                 <Link href = {`/thread/${id}`}>
-                                    <Image
-                                        src = "/reply.svg"
-                                        alt = "reply"
-                                        width = {24}
-                                        height = {24}
-                                        className = "cursor-pointer object-contain select-none"
-                                        draggable = {false}
-                                    />
+                                    <p className = "flex text-gray-300 text-[14px] justify-center items-center gap-1">
+                                        <Image
+                                            src = "/reply.svg"
+                                            alt = "reply"
+                                            width = {24}
+                                            height = {24}
+                                            className = "cursor-pointer object-contain select-none"
+                                            draggable = {false}
+                                        /> Comment
+                                    </p>
                                 </Link>
-                                <Image
-                                    src = "/repost.svg"
-                                    alt = "repost"
-                                    width = {24}
-                                    height = {24}
-                                    className = "cursor-pointer object-contain select-none"
-                                    draggable = {false}
-                                />
-                                <Image
-                                    src = "/share.svg"
-                                    alt = "share"
-                                    width = {24}
-                                    height = {24}
-                                    className = "cursor-pointer object-contain select-none"
-                                    draggable = {false}
-                                />
                             </div>
 
                             {isComment && comments.length > 0 && (
                                 <Link href = {`/thread/${id}`}>
-                                    <p className = "mt-1 text-subtle-medium text-gray-1">
+                                    <p className = "mt-1 text-subtle-medium text-gray-300">
                                         {comments.length} replies
                                     </p>
                                 </Link>
@@ -116,7 +94,7 @@ const ThreadCard = ({
 
                     {!isComment && community && (
                         <Link href = {`/communities/${community.id}`} className = "mt-5 flex items-center">
-                            <p className = "text-subtle-medium text-gray-500">
+                            <p className = "text-subtle-medium text-gray-300">
                                 {formatDateString(createdAt)}
                                 {" "} - {community.name} Community
                             </p>

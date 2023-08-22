@@ -5,7 +5,6 @@ import { Poppins } from 'next/font/google'
 
 import Topbar from '@/components/shared/TopBar';
 import LeftSideBar from '@/components/shared/LeftSideBar';
-import RightSideBar from '@/components/shared/RightSideBar';
 import BottomBar from '@/components/shared/BottomBar';
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'] })
@@ -23,7 +22,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${poppins.className} flex flex-col justify-center items-center w-full md:h-screen bg-light-body-background`}>
+        <body className={`${poppins.className} flex flex-col justify-center items-center w-full md:h-screen bg-[#101010]`}>
 
           <Topbar/>
 
@@ -38,7 +37,6 @@ export default function RootLayout({
               </section>
 
             </main>
-            <RightSideBar/>
           </div>
 
           <BottomBar/>

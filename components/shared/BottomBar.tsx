@@ -11,8 +11,8 @@ function BottomBar() {
 
     return (
         <>
-            <section className = "bottombar shadow-2xl shadow-black">
-                <div className = "bottombar_container">
+            <section className = "bottombar shadow-2xl shadow-black bg-[#272727]">
+                <div className = "bottombar_container text-white">
                 {
                     sidebarLinks.map((link) => {
                         const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route
@@ -21,7 +21,7 @@ function BottomBar() {
                             <Link 
                                 href = {link.route} 
                                 key = {link.label}
-                                className = {`bottombar_link ${isActive && 'bg-diskus-pink'} `}
+                                className = {`bottombar_link ${isActive && 'bg-diskus-pink text-white'} `}
                             >
                                 <Image
                                     src = {link.imgURL}
@@ -31,7 +31,7 @@ function BottomBar() {
                                     draggable = {false}
                                     className = "select-none"
                                 />
-                                <p className = "text-black text-sublte-medium max-sm:hidden">
+                                <p className = "text-white text-sublte-medium max-sm:hidden">
                                     {link.label.split(/\s+./)[0]}
                                 </p>
                             </Link>

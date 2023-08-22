@@ -16,7 +16,7 @@ const page = async ({params} : {params: {id: string}}) => {
     if(!userInfo?.onboarded) redirect('/onboarding')
 
     return (
-        <section>
+        <section className = "mt-5 md:mt-0 mb-[10rem]">
             <ProfileHeader
                 accountId = {userInfo.id}
                 authUserId = {user.id}
@@ -27,7 +27,7 @@ const page = async ({params} : {params: {id: string}}) => {
             />
             <div className = "mt-9">
                 <Tabs defaultValue = "threads" className = "w-full">
-                    <TabsList className = "w-full flex gap-0 bg-light-body-background">
+                    <TabsList className = "w-full flex gap-0 bg-[#101010]">
                         {profileTabs.map((tab) => {
                             return (
                                 <TabsTrigger key = {tab.label} value = {tab.value} className = "tab" >
@@ -41,7 +41,7 @@ const page = async ({params} : {params: {id: string}}) => {
                                     />
                                 <p className = "max-sm:hidden">{tab.label}</p>
                                 {tab.label === 'Threads' &&
-                                    <p className = "rounded-sm bg-white px-2 py-1 !text-tiny-medium text-black">
+                                    <p className = "rounded-sm bg-white px-2 py-1 !text-tiny-medium text-white">
                                         {userInfo?.threads?.length}
                                     </p>
                                 }

@@ -13,7 +13,7 @@ async function Page() {
 
     return (
         <>
-            <h1 className = "head-text text-black">Create Diskussion</h1>
+            <h1 className = "head-text text-white mb-5 mt-5 md:mt-0">Create Diskussion</h1>
             <PostThread userId = {userInfo._id}/>
         </>
     )

@@ -16,14 +16,14 @@ const Page = async () => {
 
     return (
         <section>
-            <h1 className = "head-text mb-10 text-black"> Activity </h1>
-            <section className = "mt-10 flex flex-col gap-5">
+            <h1 className = "head-text mb-5 text-white mt-5 md:mt-0"> Activity </h1>
+            <section className = "mt-5 flex flex-col gap-5">
                 {activity.length > 0 ? (
                     <>
                     {activity.map((activity) => {
                         return (
-                            <Link key = {activity._id} href = {`/thread/${activity.parentId}`} >
-                                <article className = "activity-card">
+                            <Link key = {activity._id} href = {`/thread/${activity.parentId}`}>
+                                <article className = "activity-card bg-[#272727]">
                                     <Image
                                         src = {activity.author.image}
                                         alt = "Profile Picture"
@@ -33,7 +33,7 @@ const Page = async () => {
                                         unoptimized = {true}
                                         className = "object-cover select-none rounded-full w-[30px] h-[30px]"
                                     />
-                                    <p className = "!text-small-regular text-black">
+                                    <p className = "!text-small-regular text-white">
                                         <span className = "font-bold">
                                             {`${activity.author.name}`}
                                         </span>{" "}

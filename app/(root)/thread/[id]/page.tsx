@@ -30,7 +30,7 @@ const Page = async ({ params }: {params: {id: string}}) => {
                     createdAt = {thread.createdAt}
                     comments = {thread.children}
                 />
-                <h1 className = "font-bold text-[30px] mt-6">Comments</h1>
+                <h1 className = "font-bold text-[30px] text-white mt-6">Comments</h1>
             </div>
 
             <div className = "mt-7">

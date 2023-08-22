@@ -8,8 +8,8 @@ export default async function Home() {
 
     return (
       <>
-        <section>
-            <h1 className = "head-text text-black">Home</h1>
+        <section className = "mb-[10rem]">
+            <h1 className = "head-text text-white mt-5 md:mt-0">Home</h1>
 
             <section className = "mt-5 flex flex-col gap-5">
               {result.posts.length === 0 ? 

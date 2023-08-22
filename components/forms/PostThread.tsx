@@ -56,10 +56,10 @@ function PostThread({userId}: {userId: string}) {
                         name="thread"
                         render={({ field }) => (
                             <FormItem className = "flex flex-col w-full">
-                            <FormLabel className = "text-base-semibold text-black">
+                            <FormLabel className = "text-base-semibold text-white">
                                 Content
                             </FormLabel>
-                            <FormControl className = "no-focus w-full border border-dark-4 bg-white text-black">
+                            <FormControl className = "no-focus w-full border border-dark-4 bg-[#272727] text-white">
                                 <Textarea
                                     className = "w-full" 
                                     rows = {15}
